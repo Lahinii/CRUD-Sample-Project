@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('products', ProductController::class);
+Route::apiResource('categories', CategoryController::class);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Example API route
-Route::get('/test', function () {
-    return response()->json(['message' => 'API is working']);
-});
+
